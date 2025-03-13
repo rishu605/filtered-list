@@ -1,11 +1,13 @@
+import { User } from "../data/data";
+
 interface SortOptionsProps {
-    onChange: (value: { field: string; order: "asc" | "desc" }) => void;
+    onChange: (value: { field: keyof User; order: "asc" | "desc" }) => void;
 }
 
 const SortOptions: React.FC<SortOptionsProps> = ({ onChange }) => {
     const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const [field, order] = e.target.value.split("_");
-        onChange({ field, order: order as "asc" | "desc" });
+        onChange({ field: field as keyof User, order: order as "asc" | "desc" });
     };
 
     return (

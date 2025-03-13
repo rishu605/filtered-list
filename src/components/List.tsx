@@ -8,7 +8,7 @@ import Table from "./Table";
 import useFilteredList from "../hooks/useFilteredList";
 
 type SortKey = {
-    field: string;
+    field: keyof User;
     order: "asc" | "desc";
 };
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { users, User } from "../data/data";
 
 type SortKey = {
-    field: string;
+    field: keyof User;
     order: "asc" | "desc";
 };
 
